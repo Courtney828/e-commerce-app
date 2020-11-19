@@ -21,7 +21,8 @@ export class ProductPage implements OnInit {
     return this.prod.getAllProduct().subscribe(res => {
       this.prod_List = res.map((product) => {
         return {
-          ...product.payload.doc.data(),
+          ...product.payload.doc.data(), 
+          
           id:product.payload.doc.id
 
         } as Product

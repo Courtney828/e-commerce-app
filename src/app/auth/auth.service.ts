@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { User } from '../user';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { Router } from  "@angular/router";
 import  firebase from 'firebase';
 
 @Injectable({
@@ -28,7 +29,7 @@ export class AuthService {
       console.log(results);
       if(results){
         message = "successfully registered"
-        firebase.database().ref('users/' + results.user.uid).set({
+        firebase.database().ref('customers/' + results.user.uid).set({
           firstName: user.firstName,
           email: user.email,
           lastName:user.lastName,
@@ -82,7 +83,7 @@ getCurrentUser(){
   firebase.auth().onAuthStateChanged((user) =>{
     if (user) {
       var userId = user.uid;
-     firebase.database().ref('/users/' + userId).once('value').then( userProfile =>{
+     firebase.database().ref('/customers/' + userId).once('value').then( userProfile =>{
         this.userInfo = new User (userProfile.val().firstName, userProfile.val().lastName, userProfile.val().email)
         console.log(this.userInfo);
         // return userInfo
@@ -93,7 +94,8 @@ getCurrentUser(){
     }
   });
 
-  
+}
+}
   
 
-}
+

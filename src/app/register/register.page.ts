@@ -28,10 +28,9 @@ export class RegisterPage implements OnInit {
   }
   signUp() {
 
-
     // this.user = new User(this.firstName, this.lastName, this.email, this.password);
     this.authService.signUpUser(this.contactForm.value);
-    this.route.navigate(['']);
+    this.route.navigate(['login']);
     this.authService.getCurrentUser()
   }
   }
