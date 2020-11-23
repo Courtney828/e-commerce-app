@@ -1,4 +1,4 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar>
     <ion-title>Product</ion-title>
   </ion-toolbar>
@@ -8,7 +8,7 @@
 
   <ion-grid>
     <ion-row>
-      <ion-col *ngFor ="let product of prod_List">
+      <ion-col *ngFor ="let product of prod_List" size="9">
         <ion-card>
           <ion-card-header>
             <img src={{product.picture}}>
@@ -25,9 +25,60 @@
               <ion-label>{{product.price}}</ion-label>
             </ion-item>
           </ion-card-content>
+          <ion-button  [routerLink]="['/shopping-cart']" color="medium" style="float: right;"> ADD TO CART<ion-icon name="cart-outline"></ion-icon></ion-button>
         </ion-card>
       </ion-col>
     </ion-row>
   </ion-grid>
+
+</ion-content> -->
+
+
+
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      shopping-cart
+    </ion-title>
+    <ion-buttons slot="end" (click)="presentPopover()">
+      <ion-icon slot="icon-only" name="funnel"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+ 
+<ion-content>
+  <ion-list>
+    <ion-card *ngFor="let product of prod_List">
+      <ion-card-header>
+        <ion-card-title>{{product.name}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-row class="ion-align-items-center">
+          <ion-col size="8" class="ion-text-left">
+            <ion-button fill="clear" (click)="addToCart(p)">
+              <ion-icon name="add"></ion-icon>
+            </ion-button>
+          </ion-col>
+          <ion-col size="4">
+              <ion-label color="secondary">
+                <b>{{ product.price }}</b>
+              </ion-label>
+            </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+
+  <ion-fab *ngIf="!cartIsEmpty" vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="openCart()" #cart>
+      <ion-icon name="cart" class="cart-icon"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-fab *ngIf="cartIsEmpty" vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="openEmptyCartAlert()" #cart>
+      <ion-icon name="cart" class="cart-icon"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 
 </ion-content>

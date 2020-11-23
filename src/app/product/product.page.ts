@@ -17,11 +17,12 @@ export class ProductPage implements OnInit {
   ngOnInit() {
     this.getproductLists()
   }
+
   getproductLists() {
     return this.prod.getAllProduct().subscribe(res => {
       this.prod_List = res.map((product) => {
         return {
-          ...product.payload.doc.data(), 
+          ...product.payload.doc.data(),
           
           id:product.payload.doc.id
 

@@ -78,6 +78,7 @@ resetPassword(email: string) {
     .then(() => console.log('sent Password Reset Email!'))
     .catch((error) => console.log(error))
 }
+
 getCurrentUser(){
    
   firebase.auth().onAuthStateChanged((user) =>{
