@@ -1,5 +1,5 @@
-<!-- <ion-header [translucent]="true">
-  <ion-toolbar>
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
     <ion-title>
       Products
     </ion-title>
@@ -27,17 +27,16 @@
               <ion-label>{{product.price}}</ion-label>
             </ion-item>
           </ion-card-content>
-          <ion-button  [routerLink]="['/shopping-cart']" color="medium" style="float: right;"> ADD TO CART<ion-icon name="cart-outline"></ion-icon></ion-button>
+          <ion-button  [routerLink]="['/shopping-cart']" color="dark" style="float: right;"> ADD TO CART<ion-icon name="cart-outline"></ion-icon></ion-button>
         </ion-card>
       </ion-col>
     </ion-row>
   </ion-grid>
 
-</ion-content> -->
+</ion-content>
 
 
-
-
+<!-- 
 <ion-header>
   <ion-toolbar color="medium">
     <ion-title>
@@ -59,7 +58,7 @@
       <ion-card-content>
         <ion-row class="ion-align-items-center">
           <ion-col size="8" class="ion-text-left">
-            <ion-button fill="clear" (click)="addToCart(p)">
+            <ion-button fill="clear" (click)="addToCart(item)">
               <ion-icon name="add"></ion-icon>
             </ion-button>
           </ion-col>
@@ -85,4 +84,9 @@
     </ion-fab-button>
   </ion-fab>
 
-</ion-content>
+</ion-content> 
+
+
+
+
+  -->

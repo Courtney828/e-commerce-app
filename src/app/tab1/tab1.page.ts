@@ -30,12 +30,7 @@ export class Tab1Page {
       })
     })
   }
-  // ViewProduct(product) {
-  //   this.router.navigateByUrl('/product', { state: product });
-  // }
- 
 
-  
 }
 
 

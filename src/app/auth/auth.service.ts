@@ -79,6 +79,17 @@ resetPassword(email: string) {
     .catch((error) => console.log(error))
 }
 
+logout(){
+  firebase.auth().signOut().then(()  =>{
+    // Sign-out successful.
+    console.log("Sign-out successful.");
+    
+  }).catch(function(error) {
+    console.log(error);
+    
+  });
+}
+
 getCurrentUser(){
    
   firebase.auth().onAuthStateChanged((user) =>{

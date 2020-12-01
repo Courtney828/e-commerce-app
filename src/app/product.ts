@@ -1,8 +1,9 @@
 export interface Product {
 
-    // id:number,
+    id:number,
     name:string,
     price:string,
     description:string,
-    picture:string
+    picture:string,
+    quantity :number
 }

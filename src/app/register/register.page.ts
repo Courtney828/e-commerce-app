@@ -22,8 +22,6 @@ export class RegisterPage implements OnInit {
       lastName: "",
       email: "",
       password: ""
-    
-
     });
   }
   signUp() {
