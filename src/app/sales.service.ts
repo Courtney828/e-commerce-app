@@ -17,7 +17,7 @@ export class SalesService {
 
   
   addToCart(userid: string, item: any): void {
-    let obj = this.db.collection(`/product/${userid}/${item.name}`);
+    let obj = this.db.collection(`/cart/${userid}/${item.name}`);
     obj.ref.onSnapshot(val => {
       if (val == null) {
         return { name: item.name, cost: item.cost, url: item.url, count: 1 };
@@ -47,7 +47,7 @@ export class SalesService {
 
   getItemsFromCart(): any {
     this.getUid().then((userid) => {
-      return this.db.collection('/carts' + '/' + userid);
+      return this.db.collection('/cart' + '/' + userid);
     });
   };
   //   addCustomKey(key:any, value:any) {

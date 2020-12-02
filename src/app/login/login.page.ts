@@ -27,7 +27,7 @@ export class LoginPage implements OnInit {
   login(){
 
     this.authService.signInUser(this.contactForm.value.email, this.contactForm.value.password)
-    this.router.navigate(['/product']);
+    this.router.navigate(['/tabs']);
     this.loggonInUser = this.authService.userInfo
     }
 

@@ -10,7 +10,8 @@ import { ProductsService } from '../products.service';
 })
 export class Tab1Page {
   prod_List:Product []=[]
-  constructor(private prod: ProductsService, private router: Router ) {}
+  uid: string;
+  constructor(private prod: ProductsService, private router: Router, ) {}
 
 
   
@@ -30,6 +31,9 @@ export class Tab1Page {
       })
     })
   }
+  // addToCart(item: any){
+  //   this.userData.addToCart(this.uid, item);
+  // }
 
 }
 
