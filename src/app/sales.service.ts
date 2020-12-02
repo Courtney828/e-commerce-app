@@ -7,9 +7,9 @@ import { AuthService } from './auth/auth.service';
 })
 export class SalesService {
 
-  userID = localStorage.getItem('userID').toString()
+  userID = localStorage.getItem('userID');
 
-  constructor(private db: AngularFirestore, private authService: AuthService) { }
+  constructor(private db: AngularFirestore) { }
  
   getCart() {
     this.db.collection('cart', ref => ref.where('userID', '==', this.userID)).valueChanges().subscribe(val => {
@@ -18,7 +18,7 @@ export class SalesService {
   }
 
   addCart(product) {
-    // console.log(product);
+
 
     this.db.collection("cart").add(product).then(results => {
       console.log("added");
