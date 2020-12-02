@@ -17,6 +17,8 @@ export class AuthService {
 
   signUpUser(user){
 
+    // var database = firebase.database();
+    // console.log(user);
     let message = ""
     firebase.auth().createUserWithEmailAndPassword(user.email, user.password).catch((error) =>{
       // Handle Errors here.
