@@ -13,7 +13,7 @@ export class Tab2Page {
   cart: any
   product
   uid
-  cartList :any 
+  cartList 
   constructor(private prod: ProductsService, private saleService : SalesService , private router: Router, private db: AngularFirestore) {
   this.router.getCurrentNavigation().extras.state
   this.product = history.state
